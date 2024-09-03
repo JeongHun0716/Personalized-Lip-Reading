@@ -76,7 +76,7 @@ The pre-trained vision-adapted model is provided in the below link.
 
 | Vision Adapted Model      | Training Datasets  |  WER(\%)  | Target Directory |
 |--------------|:----------|:------------------:|:----------:|
-| [best_ckpts.zip](https://www.dropbox.com/scl/fo/zxnycpjlffd18ok5bg7ob/AKwd8lxvbx_q_BECGnTI2Pc?rlkey=a8f5e8gjan15mmmcgmw1peo0p&st=2hmj185b&dl=0) |     VoxLRS-SA              |     41.5  |  src/pretrained_models/adapted_model/vision   |
+| [best_ckpts.zip](https://www.dropbox.com/scl/fi/s1c1sjaai7ff2i4vvu6bd/vision.zip?rlkey=fni3jv61kaoya4zwtyr3lu39y&st=9pbz0fxg&dl=0) |     VoxLRS-SA              |     41.5  |  src/pretrained_models/adapted_model/vision   |
 
 3. Vision & Language Levels Adaptation to Target speaker
 ```bash
@@ -89,7 +89,7 @@ The pre-trained vision- and language-adapted model is provided in the below link
 
 | Vision \& Language Adapted Model     | Training Datasets  |  WER(\%)  | Target Directory |
 |--------------|:----------|:------------------:|:----------:|
-| [best_ckpts.zip](https://www.dropbox.com/scl/fo/60xihdj518w44ujnixp8p/AKhdf0TxhPL5MLjQLtX8zdc?rlkey=4ddbpecgqlg0rym4z9drkeg4d&st=023giear&dl=0) |      VoxLRS-SA            |     40.9  |  src/pretrained_models/adapted_model/vision_language   |
+| [best_ckpts.zip](https://www.dropbox.com/scl/fi/wxrqy28h0xlevak09pqwj/vision_language.zip?rlkey=epxy0h2exwrcnv4fctsledmy9&st=zfblhfov&dl=0) |      VoxLRS-SA            |     40.9  |  src/pretrained_models/adapted_model/vision_language   |
 
 
 The adapted pre-trained models should be unzipped in the Target Directory, to evaluate the performance in the VoxLRS-SA dataset.
