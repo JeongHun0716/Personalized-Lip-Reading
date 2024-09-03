@@ -1,0 +1,115 @@
+# @package _group_
+
+common:
+  fp16: true
+  log_format: json
+  log_interval: 100 #200
+  tensorboard_logdir: tblog
+  seed: 1337
+  user_dir: ???
+  #empty_cache_freq: 1
+
+checkpoint:
+  save_interval: 1
+  keep_interval_updates: 1
+  save_interval_updates: 2500
+  best_checkpoint_metric: accuracy
+  no_epoch_checkpoints: true
+
+distributed_training:
+  ddp_backend: c10d
+  find_unused_parameters: false
+  distributed_world_size: 4
+  #distributed_port: 2967
+  nprocs_per_node: 4
+
+task:
+  _name: conformer_llm_training
+  is_s2s: true
+  data: ???
+  label_dir: ???
+  tokenizer_bpe_model: ???
+  normalize: true  # must be consistent with pre-training
+  labels: ["wrd"]
+  single_target: true
+  fine_tuning: true
+  stack_order_audio: 4
+  tokenizer_bpe_name: sentencepiece
+  max_sample_size: 500
+  modalities: ["video"]
+  image_aug: true
+  pad_audio: true
+  random_crop: false
+  llm_ckpt_path: ???
+
+dataset:
+  num_workers: 3
+  batch_size: 1
+  validate_after_updates: 0
+  validate_interval: 1
+  train_subset: train
+  valid_subset: test
+
+criterion:
+  _name: decoder_only_language_modeling_loss
+  report_accuracy: true
+  label_smoothing: 0.1
+
+optimization:
+  max_update: 30000
+  lr: [0.0005]
+  sentence_avg: true
+  update_freq: [8]
+  clip_norm: 1.0
+
+optimizer:
+  _name: adam
+  adam_betas: (0.9,0.98)
+  adam_eps: 1e-08
+
+lr_scheduler:
+  _name: cosine
+  warmup_updates: 500
+  min_lr: 1e-5
+  # warmup_steps: 10000
+  # hold_steps: 0
+  # decay_steps: 20000
+  final_lr_scale: 0.05
+
+model:
+  _name: conformer_llm
+  ###### conformer encoder ########
+  attention_dim: 768
+  attention_heads: 12
+  linear_units: 3072
+  num_blocks: 12
+  conformer_ckpt_path: ???
+  #################################0010
+  ###### adapater ######
+  decoder_embed_dim: 4096
+  adpater_embed_dim: 768
+  llm_ckpt_path: ??? # path to llama3 
+  #################################  
+  freeze_finetune_updates: 0
+
+hydra:
+  job:
+    config:
+      override_dirname:
+        kv_sep: '-'
+        item_sep: '__'
+        exclude_keys:
+          - run
+          - task.data
+          - task.label_dir
+          - model.autoavsr_path
+          - dataset.train_subset
+          - dataset.valid_subset
+          - criterion.wer_kenlm_model
+          - criterion.wer_lexicon
+          - model.conformer
+  run:
+    dir: ???
+  sweep:
+    dir: ???
+    subdir: ${hydra.job.config_name}__${hydra.job.override_dirname}
