@@ -41,12 +41,29 @@ To download the VoxLRS-SA dataset, please refer to [this repository](https://git
 
 ## Training and Inference
 1. Baseline lip-reading model
+
+To train the baseline lip-reading model, please download the checkpoints from the links below and move them to the target directory.
+
+| Conformer Encoder Model    | Training Datasets    | Target Directory |
+|--------------|:----------|:------------------:|
+| [vsr_trlrs3_base.pth](https://github.com/mpc001/auto_avsr) |     LRS3   |  src/pretrained_models/conformer_encoder/pretrained_lrs3   |
+
+
+| Large Language Model     | Target Directory |
+|--------------|:----------|
+| [Meta-Llama-3-8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B)   |  src/pretrained_models/llm   |
+
 ```bash
 # Train
 bash scripts/train/baseline/train.sh
 # Evaluation
 bash scripts/eval/baseline/eval.sh
 ```
+The pre-trained baseline lip-reading model is provided in the below link.
+
+|  Baseline Model      | Training Datasets  |  WER(\%)  | Target Directory |
+|--------------|:----------|:------------------:|:----------:|
+| [best_ckpt.pt](https://www.dropbox.com/scl/fi/x6c35ubgnzi08v6pomynj/checkpoint_best.pt?rlkey=9zzb54lx8b8xac04kqxw947if&st=nxf1cx7p&dl=0) |     VoxLRS-SA             |     47.3  |  src/pretrained_models/conformer_encoder/pretrained_w_llm   |
 
 2. Vision Level Adaptation to Target speaker
 ```bash
@@ -55,6 +72,11 @@ bash scripts/train/adaptation/vision_level/train.sh
 # Evaluation
 bash scripts/eval/adaptation/vision_level/eval.sh
 ```
+The pre-trained vision-adapted model is provided in the below link.
+
+| Vision Adapted Model      | Training Datasets  |  WER(\%)  | Target Directory |
+|--------------|:----------|:------------------:|:----------:|
+| [best_ckpts.zip](https://www.dropbox.com/scl/fo/zxnycpjlffd18ok5bg7ob/AKwd8lxvbx_q_BECGnTI2Pc?rlkey=a8f5e8gjan15mmmcgmw1peo0p&st=2hmj185b&dl=0) |     VoxLRS-SA              |     41.5  |  src/pretrained_models/adapted_model/vision   |
 
 3. Vision & Language Levels Adaptation to Target speaker
 ```bash
@@ -63,38 +85,14 @@ bash scripts/train/adaptation/vision_language_level/train.sh
 # Evaluation
 bash scripts/eval/adaptation/vision_language_level/eval.sh
 ```
-
-
-## Pretrained Models
-Download the checkpoints from the below links and move them to the target directory. 
-You can evaluate the performance of the finetuned model using the scripts available in the `scripts` directory.
-
-
-| Conformer Encoder Model    | Training Datasets    | Target Directory |
-|--------------|:----------|:------------------:|
-| [vsr_trlrs3_base.pth](https://github.com/mpc001/auto_avsr) |     LRS3   |  src/pretrained_models/conformer_encoder/pretrained_lrs3   |
-
-
-
-| Large Language Model     | Target Directory |
-|--------------|:----------|
-| [Meta-Llama-3-8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B)   |  src/pretrained_models/llm   |
-
-
-|  Baseline Model      | Training Datasets  |  WER(\%)  | Target Directory |
-|--------------|:----------|:------------------:|:----------:|
-| [best_ckpt.pt](https://www.dropbox.com/scl/fi/x6c35ubgnzi08v6pomynj/checkpoint_best.pt?rlkey=9zzb54lx8b8xac04kqxw947if&st=nxf1cx7p&dl=0) |     VoxLRS-SA             |     47.3  |  src/pretrained_models/conformer_encoder/pretrained_w_llm   |
-
-| Vision Adapted Model      | Training Datasets  |  WER(\%)  | Target Directory |
-|--------------|:----------|:------------------:|:----------:|
-| [best_ckpts.zip](https://www.dropbox.com/scl/fo/zxnycpjlffd18ok5bg7ob/AKwd8lxvbx_q_BECGnTI2Pc?rlkey=a8f5e8gjan15mmmcgmw1peo0p&st=2hmj185b&dl=0) |     VoxLRS-SA              |     41.5  |  src/pretrained_models/adapted_model/vision   |
+The pre-trained vision- and language-adapted model is provided in the below link.
 
 | Vision \& Language Adapted Model     | Training Datasets  |  WER(\%)  | Target Directory |
 |--------------|:----------|:------------------:|:----------:|
 | [best_ckpts.zip](https://www.dropbox.com/scl/fo/60xihdj518w44ujnixp8p/AKhdf0TxhPL5MLjQLtX8zdc?rlkey=4ddbpecgqlg0rym4z9drkeg4d&st=023giear&dl=0) |      VoxLRS-SA            |     40.9  |  src/pretrained_models/adapted_model/vision_language   |
 
-The adapted pre-trained models should be unzipped in the Target Directory, to evaluate the performance in the VoxLRS-SA dataset.
 
+The adapted pre-trained models should be unzipped in the Target Directory, to evaluate the performance in the VoxLRS-SA dataset.
 
 
 ## Acknowledgement
