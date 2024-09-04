@@ -95,5 +95,18 @@ The pre-trained vision- and language-adapted model is provided in the below link
 The adapted pre-trained models should be unzipped in the Target Directory, to evaluate the performance in the VoxLRS-SA dataset.
 
 
+## Citation
+If you find this work useful in your research, please cite the paper:
+```bibtex
+@article{yeo2024personalized,
+  title={Personalized Lip Reading: Adapting to Your Unique Lip Movements with Vision and Language},
+  author={Yeo, Jeong Hun and Kim, Chae Won, Kim, Hyunjun, Rha, HyeongSeop, Han, Seunghee, Wen-Huang Cheng, Ro, Yong Man},
+  journal={arXiv preprint arXiv:2409.00986},
+  year={2024}
+}
+```
+
 ## Acknowledgement
 This project is based on the [avhubert](https://github.com/facebookresearch/av_hubert), [espnet](https://github.com/espnet/espnet), and [fairseq](https://github.com/facebookresearch/fairseq) code. We would like to thank the developers of these projects for their contributions and the open-source community for making this work possible.
+
+
