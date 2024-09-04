@@ -4,7 +4,7 @@ This repository contains the PyTorch implementation of the following paper:
 > **Personalized Lip Reading: Adapting to Your Unique Lip Movements with Vision and Language**<be>
 ><br>
 > Jeong Hun Yeo, Chae Won Kim, Hyunjun Kim, Hyeongseop Rha, Seunghee Han, Wen-Huang Cheng, Yong Man Ro<br>
-> \[[Paper Link will be updated]()\]
+> \[[Paper Link](https://arxiv.org/abs/2409.00986)\]
 
 
 ## Introduction
