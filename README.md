@@ -63,7 +63,7 @@ The pre-trained baseline lip-reading model is provided in the below link.
 
 |  Baseline Model      | Training Datasets  |  WER(\%)  | Target Directory |
 |--------------|:----------|:------------------:|:----------:|
-| [best_ckpt.pt](https://www.dropbox.com/scl/fi/x6c35ubgnzi08v6pomynj/checkpoint_best.pt?rlkey=9zzb54lx8b8xac04kqxw947if&st=nxf1cx7p&dl=0) |     VoxLRS-SA             |     47.3  |  src/pretrained_models/conformer_encoder/pretrained_w_llm   |
+| [best_ckpt.pt](https://www.dropbox.com/scl/fi/x6c35ubgnzi08v6pomynj/checkpoint_best.pt?rlkey=9zzb54lx8b8xac04kqxw947if&st=nxf1cx7p&dl=1) |     VoxLRS-SA             |     47.3  |  src/pretrained_models/conformer_encoder/pretrained_w_llm   |
 
 2. Vision Level Adaptation to Target speaker
 ```bash
@@ -76,7 +76,7 @@ The pre-trained vision-adapted model is provided in the below link.
 
 | Vision Adapted Model      | Training Datasets  |  WER(\%)  | Target Directory |
 |--------------|:----------|:------------------:|:----------:|
-| [best_ckpts.zip](https://www.dropbox.com/scl/fi/s1c1sjaai7ff2i4vvu6bd/vision.zip?rlkey=fni3jv61kaoya4zwtyr3lu39y&st=9pbz0fxg&dl=0) |     VoxLRS-SA              |     41.5  |  src/pretrained_models/adapted_model/vision   |
+| [best_ckpts.zip](https://www.dropbox.com/scl/fi/s1c1sjaai7ff2i4vvu6bd/vision.zip?rlkey=fni3jv61kaoya4zwtyr3lu39y&st=9pbz0fxg&dl=1) |     VoxLRS-SA              |     41.5  |  src/pretrained_models/adapted_model/vision   |
 
 3. Vision & Language Levels Adaptation to Target speaker
 ```bash
@@ -89,7 +89,7 @@ The pre-trained vision- and language-adapted model is provided in the below link
 
 | Vision \& Language Adapted Model     | Training Datasets  |  WER(\%)  | Target Directory |
 |--------------|:----------|:------------------:|:----------:|
-| [best_ckpts.zip](https://www.dropbox.com/scl/fi/wxrqy28h0xlevak09pqwj/vision_language.zip?rlkey=epxy0h2exwrcnv4fctsledmy9&st=zfblhfov&dl=0) |      VoxLRS-SA            |     40.9  |  src/pretrained_models/adapted_model/vision_language   |
+| [best_ckpts.zip](https://www.dropbox.com/scl/fi/wxrqy28h0xlevak09pqwj/vision_language.zip?rlkey=epxy0h2exwrcnv4fctsledmy9&st=zfblhfov&dl=1) |      VoxLRS-SA            |     40.9  |  src/pretrained_models/adapted_model/vision_language   |
 
 
 The adapted pre-trained models should be unzipped in the Target Directory, to evaluate the performance in the VoxLRS-SA dataset.
